@@ -3,8 +3,8 @@ $('.carousel').slick({
     centerPadding: '60px',
     margin: 32,
     variableWidth: true,
-    autoplay: true,
-    autoplayspeed: 2000,
+    // autoplay: true,
+    // autoplayspeed: 2000,
     dots: true,
     slidesToShow: 1,
     responsive: [

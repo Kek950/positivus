@@ -222,6 +222,7 @@ header{
     .container{
         gap: 32px;
         margin-bottom: 140px;
+        margin-top: 30px;
         & > *{
             filter: grayscale(1);
         }
@@ -234,6 +235,10 @@ header{
             & > *{
                 filter: grayscale(0);
             }
+        }
+
+        &.PartnersCarousel{
+            display: none;
         }
         
     }
@@ -475,6 +480,10 @@ header{
             border-radius: 45px;
             padding: 70px 0;
             background-color: var(--black);
+            margin-top: 10px;
+            &.carousel{
+                display: none;
+            }
 
             .card{
                 box-shadow: 0 0 0 0 ;
@@ -725,7 +734,7 @@ header{
             border-radius: 45px;
             overflow: hidden;
             .left{
-                width: clamp(556px, 15vw, 100px);
+                width: clamp(400px, 15vw, 556px);
                .radios{
                     gap: 35px;
                     margin-bottom: 30px;
@@ -760,7 +769,7 @@ header{
                     }
                 }
                .inputs{
-                    width: clamp(556px, 15vw, 100px);
+                    width: clamp(310px, 15vw, 556px);
                     margin-bottom: 40px;
                     & > div{
                         gap: 5px;
@@ -775,11 +784,11 @@ header{
                         border: 1px solid var(--black);
                     }
                     .message{
+                        width: clamp( 310px, 15vw, 556px);
                         width: 100%;
                         height: 190px;
                         border-radius: 14px;
                         .input{
-                            width: 556px;
                             height: 190px;
                             border-radius: 14px;
                             padding: 18px 30px;
@@ -891,6 +900,19 @@ footer{
                     font-size: 14px;
                 }
             }
+            .adds{
+                display: none;
+                align-items: center;
+                justify-content: center;
+                
+                gap: 20px;
+                & > a{
+                    margin: 0 !important;
+                }
+                    .media{
+                    width: 30px !important;
+                }
+            }
         }
         .sefooter{
             color: white;
@@ -899,6 +921,7 @@ footer{
         }
     }
 }
+
 
 
 
@@ -1242,6 +1265,15 @@ footer{
 }
 
 @media screen and (max-width: 992px) {
+
+    .setitle{
+        flex-direction: column;
+        gap: 30px !important;
+        p{
+            text-align: center;
+        }
+    }
+
     nav{
 
         .links{
@@ -1310,8 +1342,10 @@ footer{
     header {
         & .container {
             .left_side {
+                max-width: 100% !important;
                 display: grid;
                 grid-template-columns: 1fr;
+                margin: 0;
 
                 h1{
                     order: 1;
@@ -1327,15 +1361,128 @@ footer{
                 }
                 a{
                     order: 4;
+                    width: calc(100% - 40px) !important;
+                    margin: 0 auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
                 }
             }
         }
     }
 
     .ourPartners{
+        .container{
+            display: none;
+        }
         .PartnersCarousel{
+            display: flex !important;
+            align-items: center;
+            .slick-track{
+                align-items: center;
+                display: flex !important;
+            }
             .slick-slide{
                 margin: 0 40px;
+            }
+        }
+    }
+
+    .services{
+        .container{
+            .cards{
+                .card{
+                    width: 100% !important;
+                    align-items: center;
+                    justify-content: center;
+                    .left_side{
+                        gap: 30px;
+                    }
+
+                    .right_side{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    
+    .cta {
+        & .container {
+            .rightSide {
+                display: none;
+            }
+        }
+    }
+
+    .study {
+        & .container {
+            & .cards {
+                width: 100%;
+                display: flex;
+                
+            }
+            .carousel {
+                display: flex !important;
+
+            }
+
+            .withoutCoaurusel{
+                display: none !important;
+                .card{
+
+                }
+            }
+            .container2{
+                width: 100% !important;
+                .card{
+                    width: clamp(350px, 60vw, 400px);
+                    background-color: var(--black);
+                    margin: 0 20px;
+                    display: flex;
+                    justify-content: center;
+                    padding: 42px 50px;
+                    height: auto !important;
+                    p{
+                        color: white;
+                        font-size: 16px;
+                        font-weight: 400;
+                        margin-bottom: 20px;
+                    }
+                    a{
+                        color: var(--green);
+                        gap: 15px;
+                        display: flex;
+                        align-items: center;
+                        span{
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .working {
+        & .accordeons {
+            & .accordeonItem {
+                & .box {
+                    & .head {
+                        div{
+                            h1{
+                                font-size: 30px !important;
+                            }
+                            h3{
+                                font-size: 18px !important;
+                            }
+                        }
+                        button {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -1349,7 +1496,24 @@ footer{
         }
     }
 
-
+    .contactUs{
+        .container{
+            .box{
+                padding: 0 15px !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .left{
+                    .forms{
+                        
+                    }
+                }
+                .right{
+                    display: none !important;
+                }
+            }
+        }
+    }
 
     .team {
         & .cards {
@@ -1362,11 +1526,53 @@ footer{
 
     footer {
         & > .container {
+            .seheading{
+                flex-direction: column;
+                gap: 36px;
+                .links{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    a{
+                        text-decoration: none;
+
+                    }
+                }
+
+                .adds{
+                    display: none !important;
+                }
+
+            }
             .sebody {
+                display: grid;
                 margin-bottom: 50px;
                 grid-template-columns: 1fr !important;
+                .box1{
+                    margin: 0 37px;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    order: 1 ;
+                    & > *{
+                        text-align: center;
+                    }
+                }
                 .box2{
-                    display: none;
+                    margin: 37px 0;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 30px !important;
+                    order: 2 ;
+                    input{
+                        width: fit-content;
+                        aspect-ratio: 5/1;
+                    }
+                }
+                .adds{
+                    order: 3 ;
+                    display: flex !important;
+                    width: 100%;
                 }
             }
         }
